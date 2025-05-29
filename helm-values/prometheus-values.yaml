@@ -8,7 +8,7 @@ alertmanager:
     receivers:
       - name: 'default'
         email_configs:
-          - to: 'your-email@example.com'
+          - to: 'imakhilthyadi@gmail.com'  # your email here
             send_resolved: true
 
 grafana:
@@ -24,6 +24,9 @@ grafana:
 prometheus:
   prometheusSpec:
     serviceMonitorSelectorNilUsesHelmValues: false
+    ruleSelector:
+      matchLabels:
+        role: alert-rules
 
 nodeExporter:
   enabled: true
