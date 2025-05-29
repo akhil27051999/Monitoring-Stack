@@ -1,0 +1,30 @@
+alertmanager:
+  enabled: true
+  config:
+    global:
+      resolve_timeout: 5m
+    route:
+      receiver: 'default'
+    receivers:
+      - name: 'default'
+        email_configs:
+          - to: 'your-email@example.com'
+            send_resolved: true
+
+grafana:
+  enabled: true
+  adminUser: admin
+  adminPassword: admin123
+  sidecar:
+    dashboards:
+      enabled: true
+    datasources:
+      enabled: true
+
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+
+nodeExporter:
+  enabled: true
+
