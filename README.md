@@ -265,10 +265,12 @@ kubectl apply -f sample-app-deployment.yaml
 
 ### Prometheus Outputs
 
+*Kubernetes Stack Outputs*
 ![Screenshot 2025-05-30 104627](https://github.com/user-attachments/assets/8975cd90-df80-4a4f-a57d-90cf941aece1)
 
 *Custom Prometheus Alert Outputs*
 ![Screenshot 2025-05-30 115808](https://github.com/user-attachments/assets/b008045a-0e64-4bd8-91d2-73b01de07efc)
+
 ![Screenshot 2025-05-30 120005](https://github.com/user-attachments/assets/25282108-955d-4bbb-9278-e6ed150c94dc)
 ![Screenshot 2025-05-30 120104](https://github.com/user-attachments/assets/ecfeb0f5-ff18-4746-9d1e-678d70a26405)
 ![Screenshot 2025-05-30 120222](https://github.com/user-attachments/assets/3ac1eebf-8512-4bb8-bc7a-da3e7ec2742e)
