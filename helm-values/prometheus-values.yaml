@@ -3,12 +3,17 @@ alertmanager:
   config:
     global:
       resolve_timeout: 5m
+      smtp_smarthost: 'smtp.gmail.com:587'
+      smtp_from: 'imakhilthyadi@gmail.com'
+      smtp_auth_username: 'imakhilthyadi@gmail.com'
+      smtp_auth_password: 'Akhil@1999'  # ⚠️ Use a Gmail App Password
+      smtp_require_tls: true
     route:
       receiver: 'default'
     receivers:
       - name: 'default'
         email_configs:
-          - to: 'imakhilthyadi@gmail.com'  # your email here
+          - to: 'imakhilthyadi@gmail.com'
             send_resolved: true
 
 grafana:
