@@ -263,6 +263,24 @@ kubectl apply -f sample-app-deployment.yaml
 ---
 ## Outputs
 
+### Prometheus Outputs
+
+![Screenshot 2025-05-30 104627](https://github.com/user-attachments/assets/8975cd90-df80-4a4f-a57d-90cf941aece1)
+![Screenshot 2025-05-30 110750](https://github.com/user-attachments/assets/9d36c051-6556-4017-b85b-d0b335f0c51a)
+![Screenshot 2025-05-30 115808](https://github.com/user-attachments/assets/b008045a-0e64-4bd8-91d2-73b01de07efc)
+![Screenshot 2025-05-30 120005](https://github.com/user-attachments/assets/25282108-955d-4bbb-9278-e6ed150c94dc)
+![Screenshot 2025-05-30 120104](https://github.com/user-attachments/assets/ecfeb0f5-ff18-4746-9d1e-678d70a26405)
+![Screenshot 2025-05-30 120222](https://github.com/user-attachments/assets/3ac1eebf-8512-4bb8-bc7a-da3e7ec2742e)
+
+### Grafana Outputs
+![Screenshot 2025-05-30 005835](https://github.com/user-attachments/assets/84b2f76c-eb61-4825-81a7-04078e676f81)
+![Screenshot 2025-05-30 005716](https://github.com/user-attachments/assets/9f6575d1-6456-43f3-ac73-988942c7f400)
+![Screenshot 2025-05-30 010237](https://github.com/user-attachments/assets/7077711f-d9f3-4e14-8761-117e239ec6b6)
+![Screenshot 2025-05-30 010340](https://github.com/user-attachments/assets/1d76a6f6-8f1b-4f6d-a6de-71832e688501)
+
+### Alerts Outputs
+![Screenshot 2025-05-30 012759](https://github.com/user-attachments/assets/e5e3b1c0-2e6d-451c-8830-7b7833ceb7f6)
+
 
 ## Conclusion
 
