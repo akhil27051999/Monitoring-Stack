@@ -66,7 +66,7 @@ helm install kube-prometheus prometheus-community/kube-prometheus-stack \
 * Login with default credentials:
 
   * Username: `admin`
-  * Password: `prom-operator`
+  * Password: `admin123`
 
 ---
 
@@ -261,11 +261,11 @@ kubectl apply -f sample-app-deployment.yaml
 * Alertmanager handles notifications (Slack, email, etc.) if configured
 
 ---
+## Outputs
+
 
 ## Conclusion
 
 This setup provides a full monitoring stack in Kubernetes using Prometheus, Grafana, and Loki. It enables metrics, logs, dashboards, and alerts for Kubernetes nodes and applications. The setup is extensible for multiple microservices in production environments.
 
 ---
-
-> **Next Steps**: Add Ingress for secure access, configure Alertmanager receivers, and build Grafana dashboards with custom panels.
