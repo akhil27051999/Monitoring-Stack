@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: <your-dockerhub-username>/sample-prometheus-app:latest
+        image: akhilthyadi/sample-prometheus-app:latest
         ports:
         - containerPort: 3000
 ---
