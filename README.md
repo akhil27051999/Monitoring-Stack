@@ -3,7 +3,6 @@
 This document captures the complete setup of a Kubernetes monitoring stack using Prometheus, Grafana, and Loki, along with a sample application, alerts configuration, and common troubleshooting steps.
 ![1_HbUk_ssbJgTcS2fy6xGL9A](https://github.com/user-attachments/assets/80cbbf70-a99c-4f21-a334-71ec005d99cd)
 
----
 
 ## 1. **Project Goal**
 
