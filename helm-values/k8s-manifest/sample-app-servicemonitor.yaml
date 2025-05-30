@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: sample-app
+  labels:
+    release: prometheus  # matches your prometheus helm release label
+spec:
+  selector:
+    matchLabels:
+      app: sample-app
+  endpoints:
+  - port: http
+    interval: 15s
+    path: /metrics
+
