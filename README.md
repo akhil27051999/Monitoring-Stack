@@ -303,4 +303,4 @@ kubectl apply -f sample-app-deployment.yaml
 
 This setup provides a full monitoring stack in Kubernetes using Prometheus, Grafana, and Loki. It enables metrics, logs, dashboards, and alerts for Kubernetes nodes and applications. The setup is extensible for multiple microservices in production environments.
 
----
+
