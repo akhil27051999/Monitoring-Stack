@@ -104,11 +104,15 @@ kubectl get pods
   * Volume mount failure
   * Node resource limits
 
+---
+
 ### II. Prometheus/Grafana not accessible
 
 * Confirm NodePort is open on EC2 security group
 * Use `kubectl get svc` to get correct port
 * Use public IP of EC2 with NodePort
+
+---
 
 ### III. Alerts not triggering
 
@@ -118,6 +122,8 @@ kubectl get pods
   kubectl get prometheusrules -n monitoring
   ```
 * Confirm alert expressions are valid using Prometheus UI `/graph`
+
+---
 
 ### IV. Grafana: Loki logs not showing
 
