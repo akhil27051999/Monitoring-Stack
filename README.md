@@ -1,4 +1,4 @@
-# Prometheus + Grafana + Loki Monitoring Stack with Sample Node.js App 🔍📊
+# Monitoring Stack using Prometheus + Grafana + Loki with a Sample Node.js App 🔍📊
 
 This document captures the complete setup of a Kubernetes monitoring stack using Prometheus, Grafana, and Loki, along with a sample application, alerts configuration, and common troubleshooting steps.
 
