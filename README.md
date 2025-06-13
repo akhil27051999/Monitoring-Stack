@@ -18,7 +18,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### ✅ SECTION 2: Prerequisites (Setup Your Local System)
+### 🛠 SECTION 2: Prerequisites (Setup Your Local System)
 
 - Docker: Required to run containers and Kind.
 - Kubectl: CLI tool to interact with the Kubernetes cluster.
