@@ -19,7 +19,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 ---
 ## 🧩 Project Section-wise Overview 
 
-### SECTION 1: Prerequisites (Setup Your Local System)
+### ✅ SECTION 1: Prerequisites (Setup Your Local System)
 
 - Docker: Required to run containers and Kind.
 - Kubectl: CLI tool to interact with the Kubernetes cluster.
@@ -28,7 +28,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 2: Set Up Kubernetes Cluster
+### ✅ SECTION 2: Set Up Kubernetes Cluster
 
 - Option to use either Kind or Minikube for a local cluster.
 - Cluster setup ensures an environment to deploy and test observability tools.
@@ -36,14 +36,14 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 3: Added Helm Repositories
+### ✅ SECTION 3: Added Helm Repositories
 
 - Helm repositories for Prometheus and Grafana are added to fetch official Helm charts.
 - This enables seamless installation of monitoring and logging stacks.
 
 ---
 
-### SECTION 4: Installed Monitoring Stack Using Helm
+### ✅ SECTION 4: Installed Monitoring Stack Using Helm
 
 - Kube-Prometheus-Stack is installed, which includes:
    - Prometheus
@@ -56,14 +56,14 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 5: Deployed Sample App to Monitor & Log
+### ✅ SECTION 5: Deployed Sample App to Monitor & Log
 
 - A simple NGINX deployment is created to generate application logs and metrics.
 - Promtail (part of Loki stack) captures logs from the NGINX pods and forwards them to Loki.
 
 ---
 
-### SECTION 6: Created Dashboards in Grafana
+### ✅ SECTION 6: Created Dashboards in Grafana
 
 - Prometheus is added as a data source in Grafana for metrics visualization.
 - Loki is added as a data source in Grafana for viewing logs.
@@ -74,7 +74,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 7: Alerting with Alertmanager
+### ✅ SECTION 7: Alerting with Alertmanager
 
 - Alertmanager is automatically deployed with kube-prometheus-stack.
 - UI available to view, silence, and test alerts.
@@ -82,7 +82,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 8: Cleanup
+### ✅ SECTION 8: Cleanup
 
 - All deployed Helm charts and Kubernetes resources can be removed.
 - The Kubernetes cluster itself can be deleted to free up local resources.
