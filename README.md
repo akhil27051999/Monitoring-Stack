@@ -69,6 +69,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 - Prometheus is added as a data source in Grafana for metrics visualization.
 - Loki is added as a data source in Grafana for viewing logs.
 - Dashboards display:
+
   - Node and application metrics (CPU, memory, etc.)
   - Logs from the deployed NGINX app
   - Alerting rules and thresholds can be configured visually.
