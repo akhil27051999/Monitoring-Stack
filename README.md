@@ -17,7 +17,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 | **Node Exporter** | Collects and exposes Linux system metrics (CPU, memory, disk, etc.) to Prometheus |
 
 ---
-## 🧩 Project Section-wise Overview 
+## 🧱 Project Section-wise Overview
 
 ### ✅ SECTION 1: Prerequisites (Setup Your Local System)
 
