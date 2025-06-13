@@ -19,7 +19,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 | **Alertmanager**| Handles and routes alerts triggered by Prometheus alerting rules               |
 | **Node Exporter** | Collects and exposes Linux system metrics (CPU, memory, disk, etc.) to Prometheus |
 
----
+
 ## 🧩 Project Section-wise Overview
 
 ### ✅ Section 1: Prerequisites (Setup Your Local System)
