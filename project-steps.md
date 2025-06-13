@@ -1,11 +1,13 @@
-## 🧠 Environment Setup
+# Installations and Troubleshooting Steps
+
+### 🧠 Environment Setup
 
 - **Cloud Provider**: AWS EC2 instance (Ubuntu)
 - **Access**: Ensure inbound ports for NodePort services are allowed in the EC2 security group (e.g., 3000, 9090, 3100)
 
 ---
 
-## 🔧 Required Tools
+### 🔧 Required Tools
 
 - **Docker**: Required for containerizing and running local builds.
 - **Kubernetes (kubeadm or EKS)**: Either set up a local cluster using kubeadm or use AWS EKS.
@@ -15,23 +17,25 @@
 
 ---
 
-## 1. Helm Repositories
+### 1. Helm Repositories
 
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
+---
 
-## 2. Prometheus + Grafana Installation
+### 2. Prometheus + Grafana Installation
 
 ```bash
 
 helm install kube-prometheus prometheus-community/kube-prometheus-stack \
   -f prometheus-values.yaml -n monitoring --create-namespace
 ```
+---
 
-## 3. Grafana Access
+### 3. Grafana Access
 
 ```bash
 kubectl get svc -n monitoring grafana
@@ -44,37 +48,47 @@ kubectl get svc -n monitoring grafana
     
 - Use EC2 IP + NodePort to access Grafana in browser.
 
-## 4. Loki + Promtail Installation
+---
+
+### 4. Loki + Promtail Installation
 
 ```bash
 helm install loki grafana/loki-stack -f loki-values.yaml -n monitoring
 ```
+---
 
-## 5. Prometheus Custom Alerts
+### 5. Prometheus Custom Alerts
 
 ```bash
 kubectl apply -f prometheus-alert.yaml
 ```
-## 6. Sample App Deployment
+---
+
+### 6. Sample App Deployment
 
 ```bash
 kubectl apply -f sample-app-deployment.yaml
 ```
 - Ensure your Docker image is pushed to Docker Hub or another registry accessible from the Kubernetes cluster.
 
-## 7. Access Metrics & Logs
+---
+
+### 7. Access Metrics & Logs
 
 - Metrics: Available at /metrics on app pod
 - Logs: Viewable in Grafana > Explore > Loki
 
-## 8. Verify Components
+---
+
+### 8. Verify Components
 
 ```bash
 kubectl get all -n monitoring
 kubectl get pods
 ```
+---
 
-## 9. **Troubleshooting Checklist**
+### 9. **Troubleshooting Checklist**
 
 ### Pod stuck in `ContainerCreating`
 
@@ -116,7 +130,7 @@ kubectl get pods
 
 ---
 
-## 10. **Monitoring the Sample App**
+### 10. **Monitoring the Sample App**
 
 ### Metrics
 
