@@ -42,7 +42,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### 📊 SECTION 5: Install Monitoring Stack Using Helm
+### 📈 SECTION 5: Install Monitoring Stack Using Helm
 
 - Kube-Prometheus-Stack is installed, which includes:
    - Prometheus
