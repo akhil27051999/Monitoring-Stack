@@ -1,199 +1,78 @@
-## 1. **Project Goal**
+## 🧠 Environment Setup
 
-To deploy a monitoring stack in a Kubernetes cluster using Prometheus for metrics, Grafana for dashboards, and Loki for logs. A sample application will be deployed and monitored using these tools. Prometheus alerts will be defined and visualized in Grafana.
-
----
-
-## 2. **Cluster Setup**
-
-* **Environment**: AWS EC2 Ubuntu instance
-* **Kubernetes Installation**: Installed using kubeadm or managed service (EKS)
-* **kubectl**: Configured and tested to interact with the cluster
+- **Cloud Provider**: AWS EC2 instance (Ubuntu)
+- **Access**: Ensure inbound ports for NodePort services are allowed in the EC2 security group (e.g., 3000, 9090, 3100)
 
 ---
 
-## 3. **Helm Installation**
+## 🔧 Required Tools
 
-* Helm installed to manage charts:
-
-  ```bash
-  curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-  ```
-
-* Helm repo for kube-prometheus-stack:
-
-  ```bash
-  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-  helm repo update
-  ```
+- **Docker**: Required for containerizing and running local builds.
+- **Kubernetes (kubeadm or EKS)**: Either set up a local cluster using kubeadm or use AWS EKS.
+- **kubectl**: Installed and configured to interact with the Kubernetes cluster.
+- **Helm**: Installed as the package manager for Kubernetes applications.
+- **Git**: To clone repositories and manage version control.
 
 ---
 
-## 4. **Prometheus + Grafana Stack Installation**
-
-### Values Configuration (`prometheus-values.yaml`)
-
-* Enabled necessary components:
-
-  * Prometheus
-  * Grafana
-  * Alertmanager
-  * Node exporter
-* Set service types to `NodePort` for browser access (or Ingress for production)
-
-### Installation Command:
+## 1. Helm Repositories
 
 ```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+```
+
+## 2. Prometheus + Grafana Installation
+
+```bash
+
 helm install kube-prometheus prometheus-community/kube-prometheus-stack \
   -f prometheus-values.yaml -n monitoring --create-namespace
 ```
 
----
+## 3. Grafana Access
 
-## 5. **Grafana Access**
+```bash
+kubectl get svc -n monitoring grafana
+```
 
-* Get NodePort:
-
-  ```bash
-  kubectl get svc -n monitoring grafana
-  ```
 * Login with default credentials:
 
   * Username: `admin`
   * Password: `admin123`
+    
+- Use EC2 IP + NodePort to access Grafana in browser.
 
----
-
-## 6. **Loki Installation**
-
-### Values File (`loki-values.yaml`):
-
-* Configured for simple single-instance Loki
-* Enabled service discovery with Promtail
-
-### Installation:
+## 4. Loki + Promtail Installation
 
 ```bash
 helm install loki grafana/loki-stack -f loki-values.yaml -n monitoring
 ```
 
----
-
-## 7. **Custom Prometheus Alerts**
-
-### File: `prometheus-alert.yaml`
-
-```yaml
-apiVersion: monitoring.coreos.com/v1
-kind: PrometheusRule
-metadata:
-  name: node-alerts
-  namespace: monitoring
-spec:
-  groups:
-  - name: node_alerts
-    rules:
-    - alert: HighMemoryUsage
-      expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 80
-      for: 2m
-      labels:
-        severity: warning
-      annotations:
-        summary: "High Memory usage on {{ $labels.instance }}"
-        description: "Memory usage is above 80% for more than 2 minutes."
-
-    - alert: DiskPressure
-      expr: kube_node_status_condition{condition="DiskPressure",status="true"} == 1
-      for: 1m
-      labels:
-        severity: critical
-      annotations:
-        summary: "Disk pressure on node {{ $labels.node }}"
-        description: "Node {{ $labels.node }} is under disk pressure."
-
-    - alert: PodCrashLooping
-      expr: increase(kube_pod_container_status_restarts_total[5m]) > 3
-      for: 1m
-      labels:
-        severity: warning
-      annotations:
-        summary: "Pod crash looping in {{ $labels.namespace }}"
-        description: "Container {{ $labels.container }} in pod {{ $labels.pod }} restarted more than 3 times in 5 minutes."
-```
-
-### Apply Alert:
+## 5. Prometheus Custom Alerts
 
 ```bash
 kubectl apply -f prometheus-alert.yaml
 ```
-
----
-
-## 8. **Sample Application Deployment**
-
-### Dockerfile for Prometheus Metrics
-
-```dockerfile
-FROM python:3.9
-WORKDIR /app
-COPY . .
-RUN pip install flask prometheus_client
-CMD ["python", "app.py"]
-```
-
-### Sample App Code: `app.py`
-
-```python
-from flask import Flask
-from prometheus_client import start_http_server, Counter
-import random, time
-
-app = Flask(__name__)
-REQUEST_COUNT = Counter('http_requests_total', 'Total number of HTTP requests')
-
-@app.route('/')
-def index():
-    REQUEST_COUNT.inc()
-    return "Hello, Prometheus!"
-
-if __name__ == '__main__':
-    start_http_server(8000)
-    app.run(host='0.0.0.0', port=5000)
-```
-
-### Kubernetes Deployment YAML
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: sample-app
-  labels:
-    app: sample-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: sample-app
-  template:
-    metadata:
-      labels:
-        app: sample-app
-    spec:
-      containers:
-      - name: sample-app
-        image: <your-dockerhub-username>/sample-prometheus-app:latest
-        ports:
-        - containerPort: 5000
-```
-
-### Apply:
+## 6. Sample App Deployment
 
 ```bash
 kubectl apply -f sample-app-deployment.yaml
 ```
+- Ensure your Docker image is pushed to Docker Hub or another registry accessible from the Kubernetes cluster.
 
----
+## 7. Access Metrics & Logs
+
+- Metrics: Available at /metrics on app pod
+- Logs: Viewable in Grafana > Explore > Loki
+
+## 8. Verify Components
+
+```bash
+kubectl get all -n monitoring
+kubectl get pods
+```
 
 ## 9. **Troubleshooting Checklist**
 
