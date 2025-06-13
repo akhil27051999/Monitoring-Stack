@@ -91,7 +91,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 - All deployed Helm charts and Kubernetes resources can be removed.
 - The Kubernetes cluster itself can be deleted to free up local resources.
 
----
+
 ## 📊 Outputs
 
 ### Prometheus Outputs
