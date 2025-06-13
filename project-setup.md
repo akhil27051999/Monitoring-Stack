@@ -1,4 +1,4 @@
-# ✅ Installations and Troubleshooting Steps
+# ✅ Installations Guide and Troubleshooting Steps
 
 ## 🛠 Environment Setup
 
