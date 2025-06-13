@@ -5,6 +5,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ![Proactive-monitoring-webyog](https://github.com/user-attachments/assets/66d7717c-5802-41b7-9531-f2ff0febb3f3)
 
+---
 
 ### 🧠 SECTION 1: What Tools Are We Using?
 
