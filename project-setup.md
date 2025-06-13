@@ -1,13 +1,13 @@
 # ✅ Installations and Troubleshooting Steps
 
-### 🧠 Environment Setup
+## 🧠 Environment Setup
 
 - **Cloud Provider**: AWS EC2 instance (Ubuntu)
 - **Access**: Ensure inbound ports for NodePort services are allowed in the EC2 security group (e.g., 3000, 9090, 3100)
 
 ---
 
-### 🔧 Required Tools
+## 🔧 Required Tools
 
 - **Docker**: Required for containerizing and running local builds.
 - **Kubernetes (kubeadm or EKS)**: Either set up a local cluster using kubeadm or use AWS EKS.
