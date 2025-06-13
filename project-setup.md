@@ -15,7 +15,6 @@
 - **Helm**: Installed as the package manager for Kubernetes applications.
 - **Git**: To clone repositories and manage version control.
 
----
 
 ## 📦 Pre-Installation Guide
 
