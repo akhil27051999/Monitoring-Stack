@@ -138,9 +138,3 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ![Screenshot 2025-05-30 012759](https://github.com/user-attachments/assets/e5e3b1c0-2e6d-451c-8830-7b7833ceb7f6)
 
-
-## 🏁 Conclusion
-
-This setup provides a full monitoring stack in Kubernetes using Prometheus, Grafana, and Loki. It enables metrics, logs, dashboards, and alerts for Kubernetes nodes and applications. The setup is extensible for multiple microservices in production environments.
-
-
