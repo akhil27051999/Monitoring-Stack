@@ -69,15 +69,6 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 - All deployed Helm charts and Kubernetes resources can be removed.
 - The Kubernetes cluster itself can be deleted to free up local resources.
 
-## 📘 SECTION 10: Final Project Summary
-
-**📂 GitHub Repo Structure:**
-
-- README.md – Documentation of project setup and features.
-- manifests/ – Kubernetes manifests (e.g., sample app deployment).
-- helm-values/ – Custom Helm values for Prometheus and Loki.
-
-
 ---
 ## Outputs
 
