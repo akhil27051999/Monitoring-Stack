@@ -17,6 +17,8 @@
 
 ---
 
+## 📦 Pre-Installation Guide
+
 ### 1. Helm Repositories
 
 ```bash
@@ -88,7 +90,7 @@ kubectl get pods
 ```
 ---
 
-### 9. **Troubleshooting Checklist**
+## 🧯 Troubleshooting Checklist
 
 ### I. Pod stuck in `ContainerCreating`
 
@@ -128,21 +130,3 @@ kubectl get pods
   ```
 * Verify log labels in Grafana log UI
 
----
-
-### 10. **Monitoring the Sample App**
-
-### Metrics
-
-* Exposed at `/metrics` by `prometheus_client`
-* Prometheus scrapes and makes them queryable
-
-### Logs
-
-* If Promtail is running, logs are picked from containers and stored in Loki
-* Can be viewed in Grafana > Explore > Data Source: Loki
-
-### Alerts
-
-* Configured PrometheusRule fires when thresholds are met
-* Alertmanager handles notifications (Slack, email, etc.) if configured
