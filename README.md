@@ -36,14 +36,14 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 3: Add Helm Repositories
+### SECTION 3: Added Helm Repositories
 
 - Helm repositories for Prometheus and Grafana are added to fetch official Helm charts.
 - This enables seamless installation of monitoring and logging stacks.
 
 ---
 
-### SECTION 4: Install Monitoring Stack Using Helm
+### SECTION 4: Installed Monitoring Stack Using Helm
 
 - Kube-Prometheus-Stack is installed, which includes:
    - Prometheus
@@ -56,14 +56,14 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 5: Deploy Sample App to Monitor & Log
+### SECTION 5: Deployed Sample App to Monitor & Log
 
 - A simple NGINX deployment is created to generate application logs and metrics.
 - Promtail (part of Loki stack) captures logs from the NGINX pods and forwards them to Loki.
 
 ---
 
-### SECTION 6: Create Dashboards in Grafana
+### SECTION 6: Created Dashboards in Grafana
 
 - Prometheus is added as a data source in Grafana for metrics visualization.
 - Loki is added as a data source in Grafana for viewing logs.
