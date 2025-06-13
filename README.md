@@ -62,7 +62,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### 📊 SECTION 7: Create Dashboards in Grafana
+### 📈 SECTION 7: Create Dashboards in Grafana
 
 - Prometheus is added as a data source in Grafana for metrics visualization.
 - Loki is added as a data source in Grafana for viewing logs.
