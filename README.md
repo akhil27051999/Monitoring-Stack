@@ -5,21 +5,21 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ![Proactive-monitoring-webyog](https://github.com/user-attachments/assets/66d7717c-5802-41b7-9531-f2ff0febb3f3)
 
+## 🔧 Tools Stack
+
+| Tool            | Role / Purpose                                                                 |
+|-----------------|----------------------------------------------------------------------------------|
+| **Kubernetes**  | Core orchestration layer for containerized applications                        |
+| **Prometheus**  | Collects, stores, and queries time-series metrics                              |
+| **Grafana**     | Visualizes metrics and logs via customizable dashboards                        |
+| **Loki**        | Lightweight log aggregator designed to integrate seamlessly with Grafana       |
+| **Alertmanager**| Handles and routes alerts triggered by Prometheus alerting rules               |
+| **Node Exporter** | Collects and exposes Linux system metrics (CPU, memory, disk, etc.) to Prometheus |
+
 ---
 ## 🧩 Project Section-wise Overview 
 
-### SECTION 1: What Tools Are We Using?
-
-- Kubernetes: Core orchestration layer for containerized applications.
-- Prometheus: Used for metrics collection and monitoring.
-- Grafana: Dashboarding tool to visualize metrics and logs.
-- Loki: Lightweight log aggregator integrated with Grafana.
-- Alertmanager: Manages and sends alerts triggered by Prometheus rules.
-- Node Exporter: Collects and exposes system-level metrics to Prometheus.
-
----
-
-### SECTION 2: Prerequisites (Setup Your Local System)
+### SECTION 1: Prerequisites (Setup Your Local System)
 
 - Docker: Required to run containers and Kind.
 - Kubectl: CLI tool to interact with the Kubernetes cluster.
@@ -28,7 +28,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 3: Set Up Kubernetes Cluster
+### SECTION 2: Set Up Kubernetes Cluster
 
 - Option to use either Kind or Minikube for a local cluster.
 - Cluster setup ensures an environment to deploy and test observability tools.
@@ -36,14 +36,14 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 4: Add Helm Repositories
+### SECTION 3: Add Helm Repositories
 
 - Helm repositories for Prometheus and Grafana are added to fetch official Helm charts.
 - This enables seamless installation of monitoring and logging stacks.
 
 ---
 
-### SECTION 5: Install Monitoring Stack Using Helm
+### SECTION 4: Install Monitoring Stack Using Helm
 
 - Kube-Prometheus-Stack is installed, which includes:
    - Prometheus
@@ -56,14 +56,14 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 6: Deploy Sample App to Monitor & Log
+### SECTION 5: Deploy Sample App to Monitor & Log
 
 - A simple NGINX deployment is created to generate application logs and metrics.
 - Promtail (part of Loki stack) captures logs from the NGINX pods and forwards them to Loki.
 
 ---
 
-### SECTION 7: Create Dashboards in Grafana
+### SECTION 6: Create Dashboards in Grafana
 
 - Prometheus is added as a data source in Grafana for metrics visualization.
 - Loki is added as a data source in Grafana for viewing logs.
@@ -74,7 +74,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 8: Alerting with Alertmanager
+### SECTION 7: Alerting with Alertmanager
 
 - Alertmanager is automatically deployed with kube-prometheus-stack.
 - UI available to view, silence, and test alerts.
@@ -82,7 +82,7 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 
 ---
 
-### SECTION 9: Cleanup
+### SECTION 8: Cleanup
 
 - All deployed Helm charts and Kubernetes resources can be removed.
 - The Kubernetes cluster itself can be deleted to free up local resources.
