@@ -47,10 +47,10 @@ This document captures the complete setup of a Kubernetes monitoring stack using
 ### ✅ Section 4: Installed Monitoring Stack Using Helm
 
 - Kube-Prometheus-Stack is installed, which includes:
-   - Prometheus
-   - Alertmanager
-   - Node Exporter
-   - Grafana
+   * Prometheus
+   * Alertmanager
+   * Node Exporter
+   * Grafana
 
 - Grafana is bundled within this stack for out-of-the-box visualization.
 - Loki + Promtail are installed separately for centralized log collection.
