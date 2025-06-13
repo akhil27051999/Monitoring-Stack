@@ -90,7 +90,7 @@ kubectl get pods
 
 ### 9. **Troubleshooting Checklist**
 
-### 1. Pod stuck in `ContainerCreating`
+### I. Pod stuck in `ContainerCreating`
 
 * Check describe:
 
@@ -103,13 +103,13 @@ kubectl get pods
   * Volume mount failure
   * Node resource limits
 
-### 2. Prometheus/Grafana not accessible
+### II. Prometheus/Grafana not accessible
 
 * Confirm NodePort is open on EC2 security group
 * Use `kubectl get svc` to get correct port
 * Use public IP of EC2 with NodePort
 
-### 3. Alerts not triggering
+### III. Alerts not triggering
 
 * Confirm rules applied:
 
@@ -118,7 +118,7 @@ kubectl get pods
   ```
 * Confirm alert expressions are valid using Prometheus UI `/graph`
 
-### 4. Grafana: Loki logs not showing
+### IV. Grafana: Loki logs not showing
 
 * Check if Promtail is installed and running
 * Check pod logs:
