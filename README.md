@@ -1,11 +1,12 @@
 # Monitoring Stack using Prometheus + Grafana + Loki and AlertManager for a Node.js App 🔍📊
 
+### 👨‍💻 Project Goal
 This document captures the complete setup of a Kubernetes monitoring stack using Prometheus, Grafana, and Loki, along with a sample application, alerts configuration, and common troubleshooting steps.
 
 
 ![Proactive-monitoring-webyog](https://github.com/user-attachments/assets/66d7717c-5802-41b7-9531-f2ff0febb3f3)
 
-### 🔧 Tools Stack
+### 🛠 Tools Stack
 
 | Tool            | Role / Purpose                                                                 |
 |-----------------|----------------------------------------------------------------------------------|
