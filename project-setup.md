@@ -216,7 +216,7 @@ kind delete cluster --name observability
 
 ---
 
-# 📃 Final Commands Summary (Chronological)
+## 📃 Final Commands Summary
 
 ```bash
 # Install tools
