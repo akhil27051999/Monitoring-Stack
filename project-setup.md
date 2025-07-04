@@ -37,7 +37,7 @@ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bas
 helm version
 ```
 
----
+
 
 ## ✅ Section 2: Creating Kubernetes Cluster with Kind
 
@@ -60,7 +60,7 @@ kubectl get nodes
 | Docker not running | `sudo systemctl start docker`   |
 | Kind fails         | Delete and recreate the cluster |
 
----
+
 
 ## ✅ Section 3: Adding Helm Repositories
 
@@ -76,7 +76,7 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
 
----
+
 
 ## ✅ Section 4: Installing Prometheus + Grafana Monitoring Stack
 
@@ -105,7 +105,7 @@ kubectl get svc -n monitoring
 | Pod not running     | `kubectl describe pod` or check logs |
 | Helm install failed | `helm uninstall` then reinstall      |
 
----
+
 
 ## ✅ Section 5: Installing Loki + Promtail (Logging Stack)
 
@@ -132,7 +132,7 @@ kubectl get daemonsets -n monitoring | grep promtail
 | ---------------------- | ---------------------------- |
 | Logs not showing in UI | Check Promtail logs & labels |
 
----
+
 
 ## ✅ Section 6: Deploying Sample App (NGINX)
 
@@ -154,7 +154,7 @@ kubectl get pods,svc
 kubectl logs -l app=nginx
 ```
 
----
+
 
 ## ✅ Section 7: Setting up Grafana Dashboards
 
@@ -174,7 +174,7 @@ kubectl port-forward svc/kube-prom-stack-grafana -n monitoring 3000:80
 * Prometheus URL: `http://kube-prom-stack-prometheus.monitoring.svc:9090`
 * Loki URL: `http://loki.monitoring.svc.cluster.local:3100`
 
----
+
 
 ## ✅ Section 8: Configuring Alertmanager
 
@@ -189,7 +189,7 @@ kubectl port-forward svc/kube-prom-stack-alertmanager -n monitoring 9093:9093
 * Open `http://localhost:9093`
 * Configure alert rules in PrometheusRule CRD
 
----
+
 
 ## ✅ Section 9: Cleanup
 
@@ -204,9 +204,9 @@ kubectl delete namespace monitoring
 kind delete cluster --name observability
 ```
 
----
 
-# 🔧 Troubleshooting Summary
+
+## 🔧 Troubleshooting Summary
 
 | Issue                    | Cause                        | Solution                   |
 | ------------------------ | ---------------------------- | -------------------------- |
@@ -214,7 +214,7 @@ kind delete cluster --name observability
 | Port-forward not working | Service not exposed properly | Check `kubectl get svc`    |
 | Promtail not shipping    | Volume or path issue         | Check DaemonSet + Pod logs |
 
----
+
 
 ## 📃 Final Commands Summary
 
