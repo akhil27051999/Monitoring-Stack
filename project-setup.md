@@ -1,4 +1,4 @@
-# ✅ Section 1: Provisioning Local System for Observability
+## ✅ Section 1: Provisioning Local System for Observability
 
 ### 🔍 Concept: Local Dev Environment for Kubernetes Monitoring
 
@@ -39,7 +39,7 @@ helm version
 
 ---
 
-# ✅ Section 2: Creating Kubernetes Cluster with Kind
+## ✅ Section 2: Creating Kubernetes Cluster with Kind
 
 ### 📌 Concept: Kubernetes Cluster Provisioning
 
@@ -62,7 +62,7 @@ kubectl get nodes
 
 ---
 
-# ✅ Section 3: Adding Helm Repositories
+## ✅ Section 3: Adding Helm Repositories
 
 ### 🎯 Concept: Helm Chart Source Configuration
 
@@ -78,7 +78,7 @@ helm repo update
 
 ---
 
-# ✅ Section 4: Installing Prometheus + Grafana Monitoring Stack
+## ✅ Section 4: Installing Prometheus + Grafana Monitoring Stack
 
 ### 📊 Concept: Cluster Monitoring
 
@@ -107,7 +107,7 @@ kubectl get svc -n monitoring
 
 ---
 
-# ✅ Section 5: Installing Loki + Promtail (Logging Stack)
+## ✅ Section 5: Installing Loki + Promtail (Logging Stack)
 
 ### 🗂️ Concept: Centralized Logging
 
@@ -134,7 +134,7 @@ kubectl get daemonsets -n monitoring | grep promtail
 
 ---
 
-# ✅ Section 6: Deploying Sample App (NGINX)
+## ✅ Section 6: Deploying Sample App (NGINX)
 
 ### 📦 Concept: Metrics & Log Generation
 
@@ -156,7 +156,7 @@ kubectl logs -l app=nginx
 
 ---
 
-# ✅ Section 7: Setting up Grafana Dashboards
+## ✅ Section 7: Setting up Grafana Dashboards
 
 ### 📺 Concept: Visualize Metrics and Logs
 
@@ -176,7 +176,7 @@ kubectl port-forward svc/kube-prom-stack-grafana -n monitoring 3000:80
 
 ---
 
-# ✅ Section 8: Configuring Alertmanager
+## ✅ Section 8: Configuring Alertmanager
 
 ### 🔔 Concept: Trigger & Route Alerts
 
@@ -191,7 +191,7 @@ kubectl port-forward svc/kube-prom-stack-alertmanager -n monitoring 9093:9093
 
 ---
 
-# ✅ Section 9: Cleanup
+## ✅ Section 9: Cleanup
 
 ### ♻️ Commands
 
